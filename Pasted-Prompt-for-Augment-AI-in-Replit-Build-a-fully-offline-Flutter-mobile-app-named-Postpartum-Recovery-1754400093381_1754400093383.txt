@@ -1,0 +1,236 @@
+Prompt for Augment AI in Replit:
+Build a fully offline Flutter mobile app named Postpartum Recovery Companion designed for new mothers to track recovery, learn postpartum care, and receive self-care support.
+
+Focus on clean UI/UX with large buttons, soft pastel color palettes, and accessibility for tired eyes. All data must be stored locally using Hive or SQLite — no login or cloud features. Ensure modular code structure and comments for readability.
+
+Include the following modules and pages:
+
+🏠 1. Home Screen (Dashboard)
+Show quick summary:
+
+Today’s mood, pain, sleep quality (as emojis/icons)
+
+Last completed self-care check-in
+
+Button to access each feature: Tracker, Journaling, Learn, Reminders, Help
+
+Floating action button: "Log My Day"
+
+Clean grid layout, responsive for all screen sizes
+
+📅 2. Daily Recovery Tracker Page
+Track:
+
+Mood (emoji slider)
+
+Pain level (0-10 slider)
+
+Sleep quality (3-level dropdown or stars)
+
+Baby care (checklist: diaper, feeding, bath)
+
+Use local storage to save entry per day
+
+Auto-fill previous entries on app reopen
+
+⏰ 3. Self-Care Reminders Module
+Add default reminders (toggle on/off):
+
+Drink water (every 3 hrs)
+
+Eat well (3 meals)
+
+Do Kegel exercises (2x/day)
+
+Gentle stretches
+
+Reminders saved locally using local notifications
+
+UI for managing custom alerts
+
+📚 4. Learn Center (Offline Articles)
+Store articles in JSON and load locally
+
+Categories:
+
+Breastfeeding
+
+Postpartum depression
+
+C-section vs vaginal recovery
+
+Baby bonding
+
+Self-compassion tips
+
+Tap to expand → collapsible card UI
+
+Text should be readable, 16–18 pt font
+
+🎙 5. Journaling (Text + Voice)
+Option 1: Text journal
+
+Text field, emoji mood tag
+
+Save entries by date
+
+Search/filter past journals
+
+Option 2: Voice journal
+
+Record voice → save locally as audio file
+
+Show file list with play buttons
+
+📈 6. Progress Dashboard
+Weekly graph (line or bar chart):
+
+Mood vs Pain
+
+Sleep pattern trend
+
+Summary text: “You’ve completed 10 logs this week!”
+
+Achievements (milestone badges)
+
+🆘 7. Emergency Page
+List of preloaded emergency numbers (hospital, OB/GYN, helpline)
+
+One-tap dial buttons (if device supports dialing)
+
+Store emergency instructions in offline article format:
+
+Bleeding emergency
+
+Baby fever
+
+Signs of depression
+
+Button: “Should I call the doctor?” → Opens checklist guide
+
+👩‍⚕ 8. Doctor Mode (Health Report Generator)
+Button: “Generate Report”
+
+Create a summary of:
+
+Last 7 or 30 days of mood, sleep, pain
+
+Last journal text/voice entries
+
+Last baby care tasks
+
+Generate offline and preview in-app
+
+Button: Export to PDF (optional)
+
+👶 9. Baby Profile (Optional Sync)
+Page to enter baby details:
+
+Name, age, birth weight
+
+Manual log:
+
+Feeding (time & type)
+
+Poop log
+
+Baby temperature
+
+Display logs per day
+
+🧘‍♀ 10. Wellness Exercises
+Embed 5–10 offline breathing/guided meditation audio files (MP3)
+
+UI to play, pause, stop
+
+List format:
+
+5-minute calm breath
+
+Gentle stretch session
+
+“You’re doing great” pep talk
+
+🧠 11. Forgetfulness Helper
+Simple memory board feature:
+
+Save quick notes like “Last iron tablet: 9:30 AM”
+
+Editable sticky note style UI
+
+Optional: Alert if a saved task has passed 6 hrs
+
+🌐 12. Multi-Language Support (2 Indian Languages)
+Provide translation support for all content
+
+Support Tamil + Hindi + English (as sample)
+
+Toggle to switch language from app bar
+
+🔐 13. Security & Privacy
+Add optional pin code lock for accessing app
+
+All data should be stored locally (no internet required)
+
+Offline PDF export of data should be user-controlled
+
+💡 14. Offline AI FAQ Assistant (Bonus Feature)
+Use on-device scripted Q&A (like hardcoded FAQs)
+
+Questions:
+
+“Is it normal to bleed for 10 days?”
+
+“When should I go to doctor?”
+
+Display clear answers from pre-written database
+
+Optionally display emojis or supportive quotes
+
+🧱 Architecture Guidelines
+Use lib/ folder with structure:
+
+screens/ → Each page (home, tracker, learn, etc.)
+
+models/ → Journal entry, mood entry models
+
+services/ → Local database, notification services
+
+widgets/ → Reusable widgets like tracker cards, mood slider
+
+data/ → Local JSONs for content
+
+Add comments in code for beginner readability
+
+Use Provider or Riverpod for state management
+
+🎨 UI/UX Design Notes
+Pastel color theme: soft pinks, blues, lavenders
+
+Large buttons (min height: 50–60px)
+
+Rounded corners, no sharp edges
+
+Font: Use GoogleFonts.poppins or Raleway
+
+Icon pack: flutter_vector_icons, font_awesome_flutter
+
+Include loading animations for first-time use
+
+📦 Dependencies to Include
+yaml
+Copy code
+dependencies:
+  flutter:
+    sdk: flutter
+  hive: ^2.0.0
+  hive_flutter: ^1.1.0
+  path_provider: ^2.0.0
+  flutter_local_notifications: ^9.5.0
+  provider: ^6.0.0
+  charts_flutter: ^0.12.0
+  flutter_audio_recorder2: ^0.0.2
+  just_audio: ^0.9.18
+  google_fonts: ^3.0.1
+  flutter_localizations:
+    sdk: flutter

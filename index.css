@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Splash Screen Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-5deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 3.5s ease-in-out infinite 1s;
+}
+
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite 0.5s;
+}
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Postpartum Recovery Pastel Colors */
+  --soft-pink: hsl(329, 45%, 78%);
+  --soft-pink-light: hsl(329, 45%, 88%);
+  --soft-blue: hsl(202, 50%, 78%);
+  --soft-blue-light: hsl(202, 50%, 88%);
+  --soft-lavender: hsl(276, 50%, 78%);
+  --soft-lavender-light: hsl(276, 50%, 88%);
+  --calm-green: hsl(120, 40%, 75%);
+  --calm-green-light: hsl(120, 40%, 85%);
+  --warm-yellow: hsl(51, 100%, 85%);
+  --warm-yellow-light: hsl(51, 100%, 92%);
+  --gentle-coral: hsl(0, 50%, 85%);
+  --gentle-coral-light: hsl(0, 50%, 92%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .soft-pink {
+    background-color: hsl(var(--soft-pink));
+  }
+  
+  .soft-pink-light {
+    background-color: hsl(var(--soft-pink-light));
+  }
+  
+  .soft-blue {
+    background-color: hsl(var(--soft-blue));
+  }
+  
+  .soft-blue-light {
+    background-color: hsl(var(--soft-blue-light));
+  }
+  
+  .soft-lavender {
+    background-color: hsl(var(--soft-lavender));
+  }
+  
+  .soft-lavender-light {
+    background-color: hsl(var(--soft-lavender-light));
+  }
+  
+  .calm-green {
+    background-color: hsl(var(--calm-green));
+  }
+  
+  .calm-green-light {
+    background-color: hsl(var(--calm-green-light));
+  }
+  
+  .warm-yellow {
+    background-color: hsl(var(--warm-yellow));
+  }
+  
+  .warm-yellow-light {
+    background-color: hsl(var(--warm-yellow-light));
+  }
+  
+  .gentle-coral {
+    background-color: hsl(var(--gentle-coral));
+  }
+  
+  .gentle-coral-light {
+    background-color: hsl(var(--gentle-coral-light));
+  }
+
+  .text-soft-pink {
+    color: hsl(var(--soft-pink));
+  }
+  
+  .text-soft-blue {
+    color: hsl(var(--soft-blue));
+  }
+  
+  .text-soft-lavender {
+    color: hsl(var(--soft-lavender));
+  }
+  
+  .text-calm-green {
+    color: hsl(var(--calm-green));
+  }
+
+  .border-soft-pink {
+    border-color: hsl(var(--soft-pink));
+  }
+  
+  .border-soft-blue {
+    border-color: hsl(var(--soft-blue));
+  }
+  
+  .border-soft-lavender {
+    border-color: hsl(var(--soft-lavender));
+  }
+}
+
+/* Custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Custom scrollbar for mobile */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--soft-pink));
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--soft-pink));
+}
+
+/* Pain slider custom styling */
+.pain-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: hsl(var(--soft-pink));
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pain-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: hsl(var(--soft-pink));
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Touch-friendly button sizing */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Progress ring animation */
+@keyframes progress-ring {
+  from {
+    stroke-dashoffset: 175.93;
+  }
+  to {
+    stroke-dashoffset: var(--progress-offset);
+  }
+}
+
+.progress-ring-animated {
+  animation: progress-ring 1s ease-out forwards;
+}
